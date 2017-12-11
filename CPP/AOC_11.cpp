@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <algorithm>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
@@ -20,13 +20,14 @@ struct location
   int StepsAway()
   {
 
-    double t_X = X>0 ? X : -X;
-    double t_Y = Y>0 ? Y : -Y;
+    double t_X = abs(X);
+    double t_Y = abs(Y);
 
-    int nSteps = 0;
-    nSteps += 2*t_X;
+    int nSteps = 2*t_X;
+
     t_Y -= t_X;
-    if ( t_Y<0 ) t_Y = -t_Y;
+    t_Y = abs(t_Y);
+
     nSteps += t_Y;
 
     return nSteps;
