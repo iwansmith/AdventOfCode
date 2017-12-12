@@ -25,13 +25,9 @@ struct location
 
     int nSteps = 2*t_X;
 
-    if ( nSteps % 2 == 0 )
-      t_Y -= min( t_Y, t_X );
-    else
-      t_Y -= min( floor(t_Y)+0.5, floor(t_X)+ 0.5 );
+    t_Y -= min( t_Y, t_X );
 
     nSteps += abs(t_Y);
-
     return nSteps;
 
   }
@@ -40,8 +36,8 @@ struct location
 
 int main()
 {
-  string path = "ne,se";
-  //getline(cin,path);
+  string path;
+  getline(cin,path);
 
 
   location CurrentLocation{0,0};

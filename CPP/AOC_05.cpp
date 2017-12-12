@@ -5,15 +5,15 @@
 int main()
 {
 
-  std::string number;
+  int number;
   std::vector<int> Jumps;
 
 
 
-  while(getline(std::cin, number))
+  while(std::cin >> number)
   {
 
-    Jumps.push_back(atoi(number.c_str()));
+    Jumps.push_back(number);
   }
 
   int counter = 0;
