@@ -31,10 +31,10 @@ int main()
 
 //Part 2
 
-
-  for (int offset = 0; ; offset++)
+  int offset = 0;
+  for (bool Caught = true; Caught; offset++)
   {
-    bool Caught = false;
+    Caught = false;
     for ( auto &DR: depthrange )
     {
         int depth = DR.first;
@@ -44,14 +44,8 @@ int main()
         if ( Caught )
           break;
     }
-    if ( not Caught )
-    {
-      cout << offset << endl;
-      exit(0);
-    }
-
-
   }
+  cout << offset << endl;
 
   return EXIT_SUCCESS;
 }
