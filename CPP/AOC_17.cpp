@@ -2,7 +2,6 @@
 #include <cstdlib>
 
 #include <deque>
-#include <vector>
 #include <algorithm>
 
 using namespace std;
@@ -16,15 +15,14 @@ int main()
   // Part 1
   deque<int> Stack{0};
   int location = 0;
-  for ( int count = 0; count < 2017; count++)
+  for ( int count = 1; count <= 2017; count++)
   {
-    int size = count+1;
 
     location += Input;
-    location %= size;
-    location +=1;
+    location %= count;
+    location += 1;
 
-    Stack.insert(Stack.begin()+location, 1, size);
+    Stack.insert(Stack.begin()+location, 1, count) ;
 
   }
 
@@ -33,15 +31,13 @@ int main()
   // Part 2
   location = 0;
   int After0 = 0;
-  for ( int count = 0; count < 50e6; count++)
+  for ( int count = 1; count <= 50e6; count++)
   {
 
-    location += Input;
-    location %= (count+1);
-    location +=1;
+    location = ( location + Input ) % count + 1; // using r-values brings time down by 25% // or just use -O1
 
     if (location == 1)
-      After0 =  count+1;
+      After0 =  count;
   }
 
 

@@ -53,8 +53,8 @@ int main()
   for(
       int comloc = commands.find(',');
       comloc < commands.size();
-      comloc = commands.find(','), comloc)
-    {
+      comloc = commands.find(',', comloc)
+    ){
       commands.replace(comloc, 1, " ");
     }
 
