@@ -9,7 +9,7 @@ Advent of Code is a series of small programming puzzles for a variety of skill l
 ## Build and Run:
 ```bash
 
-cd CPP
+cd 2017 # Or year of choice
 make -j 4
 
 # or to build a specific example
@@ -22,6 +22,6 @@ make AOC_NN
 ./AOC_NN < InputFile.txt
 ```
 
-Input files are not saved and must be downloaded from the Advent of Code website.
+Input files are not saved and must be downloaded from [adventofcode.com/](https://adventofcode.com/).
 
 
