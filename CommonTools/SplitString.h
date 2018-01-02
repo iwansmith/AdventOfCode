@@ -21,13 +21,20 @@ vector<T> SplitString(const string& Input, const string& separator = " ")
       if (location > Input.size() )
         location = Input.size();
 
-     istringstream iss( string(Input.begin()+ LastLocation, Input.begin()+location));
+     string ShortString(Input.begin()+ LastLocation, Input.begin()+location);
+
+     LastLocation = location + separator.size();
+
+
+     if( ShortString == separator || ShortString.empty() )
+       continue;
+
+     istringstream iss( ShortString );
      T TemporaryValue;
 
      iss >> TemporaryValue;
      Output.push_back(TemporaryValue);
 
-     LastLocation = location + separator.size();
    }
 
   return Output;
