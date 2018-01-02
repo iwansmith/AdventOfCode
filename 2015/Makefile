@@ -1,4 +1,4 @@
-CPPFLAGS=-O1 -std=c++14 -g -Wall -Wshadow -pthread
+CPPFLAGS=-O1 -std=c++17 -g -Wall -Wshadow -pthread -I../CommonTools
 
 Files = $(patsubst %.cpp,%,$(wildcard *.cpp)) 
 
