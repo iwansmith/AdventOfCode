@@ -9,6 +9,19 @@ using namespace std;
 
 
 template<typename T>
+istream& operator >>(istream& lhs, vector<T>& rhs)
+{
+
+  T TemporaryValue;
+  while (lhs >> TemporaryValue)
+    rhs.push_back(TemporaryValue);
+
+  return lhs;
+}
+
+
+
+template<typename T>
 vector<T> SplitString(const string& Input, const string& separator = " ")
 {
   vector<T> Output;
@@ -42,3 +55,4 @@ vector<T> SplitString(const string& Input, const string& separator = " ")
 };
 
 #endif
+
